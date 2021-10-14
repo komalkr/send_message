@@ -1,0 +1,27 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>SMS Messenger</title>
+    </head>
+    <body>
+    <h1>SMS Messenger</h1>
+<table class="centered thick-border">
+        <tr>
+                <th>Sender</th>
+                <th>Reciever</th>
+                <th>message</th>
+        </tr>
+        {% for data in results %}
+        {% for k, v in data.items() %}
+                <tr>
+                        <td>{{ k }}</td>
+                        <td>{{ v }}</td>
+                </tr>
+        {% endfor %}
+        {% endfor %}
+</table>
+
+
+    </body>
+    </html>
