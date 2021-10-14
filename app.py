@@ -52,9 +52,12 @@ def handle_message():
     if request.method == 'POST':
         if request.form:
             data = request.form
-            intent = Intent(senderPhone=data['senderPhone'], receiverPhone=data['receiverPhone'], messageText=data['messageText'])
-            db.session.add(intent)
-            db.session.commit()
+            receiverPhone = data['receiverPhone'].split(',')
+            if len(receiverPhone)>0:
+                for reciever in receiverPhone:
+                    intent = Intent(senderPhone=data['senderPhone'], receiverPhone=reciever, messageText=data['messageText'])
+                    db.session.add(intent)
+                    db.session.commit()
             return {"message": f"message {intent.receiverPhone} has been sent successfully."}
         else:
             return {"error": "The request payload is not in JSON format"}
