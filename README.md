@@ -4,8 +4,8 @@ python 3.6
 Flask
 postgresql
 
-#flask db init
-#flask db migrate
-#flask db upgrade
+# flask db init
+# flask db migrate
+# flask db upgrade
 
-#run app.py
+# run app.py
